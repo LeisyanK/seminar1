@@ -35,10 +35,11 @@ public class Sudoku {
             int k = sc.nextInt();
             int l = sc.nextInt();
             int num = sc.nextInt();
-            if (board[k - 1][l - 1] != 0) {
-                System.out.println("Ячейка уже занята! Введите еще раз.");
-            } else if (k < 1 || k > 9 || l < 1 || l > 9 || num < 1 || num > 9) {
+            if (k < 1 || k > 9 || l < 1 || l > 9 || num < 1 || num > 9) {
                 System.out.println("Введены неверные числа! Введите еще раз.");
+            }
+            else if (board[k - 1][l - 1] != 0) {
+                    System.out.println("Ячейка уже занята! Введите еще раз.");
             } else if (isValidSudoku(board, k - 1, l - 1, num)) {
                 board[k - 1][l - 1] = num;
 //                System.out.println(count + " ход: " + num);
