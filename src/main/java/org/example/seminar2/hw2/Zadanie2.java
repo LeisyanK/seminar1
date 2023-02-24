@@ -7,14 +7,16 @@ public class Zadanie2 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int i = 2;
-        while (i < n && num1 < num2){
-            num1 = num2;
+        int num2; // = sc.nextInt();
+        int i = 1;
+        Boolean flag = true;
+        while (i < n){
             num2 = sc.nextInt();
+            if (num1 >= num2) {flag = false;}
+            num1 = num2;
             i++;
         }
-        if (i == n && num1 < num2) {
+        if (flag) {
             System.out.println("Возрастающая");
         } else {
             System.out.println("Не возрастающая");
