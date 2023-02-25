@@ -32,7 +32,7 @@ public class Zadanie3 {
         for (int i = 0; i < allBooks.size(); i++) {
             Books elem = allBooks.get(i);
             if (isSimplePage(elem) && isAuthor(elem) && isYear(elem)) {
-                System.out.println(elem);
+                System.out.println(elem.getName());
             }
         }
     }
