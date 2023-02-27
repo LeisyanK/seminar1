@@ -28,7 +28,7 @@ public class Zadanie2 {
 
         int searchSort = 3;
         int minPrice = 0;
-        int count = 0;
+        int count = 0;      // лучше использовать логическую переменную
 //        allProd.indexOf(getSort==2)
         for (Products2 prod : allProd) {
             if (prod.getSort() == searchSort) {
