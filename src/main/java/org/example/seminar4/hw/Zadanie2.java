@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Zadanie2 {
     public static void main(String[] args) {
-        String s = "({([)}])[]";
+        String s = "({()})[]()";
         System.out.println(isValid(s));
     }
 
@@ -30,6 +30,7 @@ public class Zadanie2 {
             }
             i++;
         }
+        if (!newList.isEmpty()) flag = false;
         return flag;
     }
 }
