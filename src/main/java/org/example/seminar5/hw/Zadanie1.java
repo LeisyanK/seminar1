@@ -67,7 +67,6 @@ public class Zadanie1 {
             newMap.putIfAbsent(s.toLowerCase(), 0);
             newMap.put(s.toLowerCase(), newMap.get(s.toLowerCase()) + 1);
         }
-//        System.out.println(myList);
         return newMap;
     }
 }
