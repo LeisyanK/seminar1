@@ -24,7 +24,6 @@ public class Zadanie2 {
             System.out.println("Error: " + e);
         } finally {
             try {
-//                assert br != null;
                 if (br != null) br.close();
             } catch(IOException e) {
                 System.out.println("Error: " + e);
@@ -47,7 +46,6 @@ public class Zadanie2 {
         Map<String, Integer> myMap = new HashMap<>();
         List<String> myList = new ArrayList<>(List.of(text.split(" ")));
         for (int i = myList.size() - 1; i >= 0; i--) {
-            // обработку кавычек не стала добавлять
             if (myList.get(i).contains(").") ||
                     myList.get(i).contains(")!") ||
                     myList.get(i).contains(")?") ||
