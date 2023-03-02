@@ -5,6 +5,10 @@ import org.example.seminar3.cw.model.Items;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Даны сведения об экспортируемых товарах: указывается наименование товара, страна, экспортирующая товар,
+ * и объем поставляемой партии в штуках. Найти страны, которые экспортируют данный товар, и общий объем его экспорта.
+ */
 public class Zadanie1 {
     public static void main(String[] args) {
 

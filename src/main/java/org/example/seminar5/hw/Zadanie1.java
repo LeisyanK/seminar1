@@ -21,6 +21,7 @@ public class Zadanie1 {
             System.out.println("Error: " + e);
         } finally {
             try {
+//                assert br != null;
                 if(br != null) br.close();
             } catch(IOException e) {
                 System.out.println("Error: " + e);
@@ -34,7 +35,11 @@ public class Zadanie1 {
     public static Map<String, Integer> findWords(String str) {
         Map<String, Integer> newMap = new HashMap<>();
         List<String> myList = new ArrayList<>(List.of(str.split(" ")));
+//        List<String> myList = new ArrayList<>();      //  строка 16 заменяет строки 17 и 18
+//        myList.addAll(List.of(str.split(" ")));
+//        System.out.println(myList);
         for (int i = myList.size() - 1; i >= 0; i--) {
+            // обработку кавычек не стала добавлять
             if (myList.get(i).contains(").") ||
                     myList.get(i).contains(")!") ||
                     myList.get(i).contains(")?") ||
@@ -67,6 +72,7 @@ public class Zadanie1 {
             newMap.putIfAbsent(s.toLowerCase(), 0);
             newMap.put(s.toLowerCase(), newMap.get(s.toLowerCase()) + 1);
         }
+//        System.out.println(myList);
         return newMap;
     }
 }
