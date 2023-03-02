@@ -1,9 +1,6 @@
 package org.example.seminar6.hw;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Задание на дом :
@@ -23,6 +20,10 @@ public class Main {
         // создаем экземпляры ноутбуков
         List<Notebook> notes = NotesBD.addNotes();
         System.out.println(notes);
+        Set<Integer> searchSet = new HashSet<>(Arrays.asList(1,2));
+        notes.get(1).searchNote(searchSet);
+
+
 
         System.out.println("""
                 Выберите характеристики ноутбука:
