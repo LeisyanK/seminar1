@@ -92,17 +92,24 @@ public class Main {
         search.put("ram","8");
         search.put("defected","true");
         // поиск в базе
-        System.out.println(search);
-        System.out.println(search.keySet());
-        System.out.println(search.containsKey("2"));
-        Set<Integer> searchSet = new HashSet<>();
-        for (int i = 0; i < notes.size(); i++) {
-            searchSet.add(notes.get(i).getNoteId());
-        }
-        System.out.println(searchSet);
+        System.out.println("поиск клиента: "+search);
+//        Set<Integer> searchSet = new HashSet<>();
+//        for (int i = 0; i < notes.size(); i++) {
+//            searchSet.add(notes.get(i).getNoteId());
+//        }
+//        System.out.println("итоговое множество(начало):"+searchSet);
+
+        // второй способ обработки 03.03.2023
+//        System.out.println(Methods.check(notes, search));
+        Set<Integer> tempSet = new HashSet<>(Methods.check(notes, search));
+        System.out.println(tempSet);
+
+//        searchSet.retainAll(Methods.checkTwo(notes, search, "ram", "ram2"));
+//        System.out.println("итоговое множество: "+searchSet);
 
 
 
+/*
         Set<Integer> temp = new HashSet<>();
 //        if (search.containsKey("ram")) {
 //            int num1 = Integer.parseInt(search.get("ram"));
@@ -180,6 +187,7 @@ public class Main {
         //        if (search.containsKey("ram2")) {
 //            if (search.get("ram"))
 //        }
-        System.out.println(search);
+        */
+//        System.out.println(search);
     }
 }
