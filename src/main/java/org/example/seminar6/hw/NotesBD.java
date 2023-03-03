@@ -24,7 +24,6 @@ public class NotesBD {
         notes.add(note5);
         notes.add(note6);
         notes.add(note7);
-//        System.out.println("В методе: " + notes);
         return notes;
     }
 }

@@ -88,9 +88,11 @@ public class Main {
 //        }
 
         search.put("ram2","12");
-        search.put("color","красный");
+        search.put("color","черный");
         search.put("ram","8");
-        search.put("defected","true");
+        search.put("defected","false");
+        search.put("price","10000");
+        search.put("price2","16000");
         // поиск в базе
         System.out.println("поиск клиента: "+search);
 //        Set<Integer> searchSet = new HashSet<>();
@@ -189,5 +191,6 @@ public class Main {
 //        }
         */
 //        System.out.println(search);
+        Methods.searchPrint(notes, tempSet);
     }
 }

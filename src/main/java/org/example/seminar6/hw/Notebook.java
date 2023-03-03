@@ -1,5 +1,6 @@
 package org.example.seminar6.hw;
 
+import java.util.List;
 import java.util.Set;
 
 public class Notebook {
@@ -110,12 +111,8 @@ public class Notebook {
                 ", ОС:" + OS +
                 ", цвет:" + color +
                 ", цена:" + price +
-                ", исправен:" + defected +
+                ", неисправен:" + defected +
                 '}';
     }
-    public void searchNote(Set<Integer> search){
-        if (search.contains(noteId)) {
-            System.out.println(noteId+noteName+noteModel);
-        }
-    }
+
 }

@@ -175,4 +175,12 @@ public class Methods {
 //    public static Set<Integer> checkTrue(List<Notebook> notes, Map<String, String> search, String str) {
 //
 //    }
+    public static void searchPrint(List<Notebook> notes, Set<Integer> search){
+        for (int i = 0; i < notes.size(); i++) {
+            if (search.contains(notes.get(i).getNoteId())) {
+                System.out.println(notes.get(i).toString());
+            }
+        }
+
+}
 }
