@@ -8,8 +8,6 @@ public class Methods {
 
     public static Set<Integer> check(Map<Integer, Notebook> notes, Map<String, String> search) {
         Set<Integer> searchSet = new HashSet<>(notes.keySet());           // изначально добавляем все id
-//        Set<Integer> searchSet = new HashSet<>();   // итоговое множество поиска  (строка 11 заменяет строки 12 и 13)
-//        searchSet.addAll(notes.keySet());           // изначально добавляем все id
         for (String elem : search.keySet()) {
             Set<Integer> temp = new HashSet<>();        // множество поиска по отдельным параметрам
             switch (elem) {
