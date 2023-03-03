@@ -1,8 +1,6 @@
 package org.example.seminar6.hw;
 
 import java.util.*;
-//org.example.seminar3.cw
-import org.example.seminar6.hw.Methods;
 
 /**
  * Задание на дом :
@@ -21,14 +19,9 @@ public class Main {
     public static void main(String[] args) {
         // создаем экземпляры ноутбуков
         List<Notebook> notes = NotesBD.addNotes();
-//        System.out.println(notes);
-        for (int i = 0; i < notes.size(); i++) {
-            System.out.println(notes.get(i).toString());
+        for (Notebook note : notes) {
+            System.out.println(note.toString());
         }
-//        Set<Integer> searchSet = new HashSet<>(Arrays.asList(1,2));
-//        notes.get(1).searchNote(searchSet);
-
-
 
         System.out.println("""
                 Выберите характеристики ноутбука:
@@ -44,19 +37,21 @@ public class Main {
         while (flag) {
             System.out.println("Введите параметр:");
             Scanner scanner = new Scanner(System.in);
-            int num = scanner.nextInt(); scanner.nextLine();
-            if (num<1 || num>6) {
+            int num = scanner.nextInt();
+            scanner.nextLine();
+            if (num < 1 || num > 6) {
                 System.out.println("Нет такого варианта поиска. Введите еще раз");
             } else {
                 String val1, val2 = null;
-                if (num==1 || num==2 || num==5){
+                if (num == 1 || num == 2 || num == 5) {
                     System.out.println("Введите нижнее значение диапазона:");
                     val1 = scanner.nextLine();
                     System.out.println("Введите верхнее значение диапазона:");
-                    val2 = scanner.nextLine();}
-                else {
-                System.out.println("Введите значение поиска:");
-                val1 = scanner.nextLine();}
+                    val2 = scanner.nextLine();
+                } else {
+                    System.out.println("Введите значение поиска:");
+                    val1 = scanner.nextLine();
+                }
                 switch (num) {
                     case 1 -> { //notes.get(0).ключ3
                         search.put("ram", val1);
@@ -74,117 +69,16 @@ public class Main {
                     }
                     case 6 -> search.put("defected", val1);
                 }
-//                search.put(num, val);
-                System.out.println("Выберите еще параметр? (да/нет)");
+                System.out.println("Введете еще параметр? (да/нет)");
                 String ans = scanner.nextLine();
                 if (ans.equals("нет")) flag = false;
             }
         }
 
-//        search.put("ram2","12");
-//        search.put("color","черный");
-//        search.put("ram","8");
-//        search.put("defected","false");
-//        search.put("price","10000");
-//        search.put("price2","16000");
         // поиск в базе
-        System.out.println("ввод клиента: "+search);
-//        Set<Integer> searchSet = new HashSet<>();
-//        for (int i = 0; i < notes.size(); i++) {
-//            searchSet.add(notes.get(i).getNoteId());
-//        }
-//        System.out.println("итоговое множество(начало):"+searchSet);
-
-        // второй способ обработки 03.03.2023
-//        System.out.println(Methods.check(notes, search));
+        System.out.println("ввод клиента: " + search);
         Set<Integer> tempSet = new HashSet<>(Methods.check(notes, search));
-        System.out.println(tempSet);
-
-//        searchSet.retainAll(Methods.checkTwo(notes, search, "ram", "ram2"));
-//        System.out.println("итоговое множество: "+searchSet);
-
-
-
-/*
-        Set<Integer> temp = new HashSet<>();
-//        if (search.containsKey("ram")) {
-//            int num1 = Integer.parseInt(search.get("ram"));
-//            int num2 = Integer.parseInt(search.get("ram2"));
-////            Set<Integer> temp = new HashSet<>();
-//            for (int i = 0; i < notes.size(); i++) {
-//                if (notes.get(i).getRam() >= num1 && notes.get(i).getRam() <= num2) {
-//                    temp.add(notes.get(i).getNoteId());
-//                }
-//            }
-//            System.out.println("temp: "+temp);
-//            searchSet.retainAll(temp);
-//            System.out.println("итоговое множество: "+searchSet);
-//        }
-
-        if (search.containsKey("ram")) {
-//            int num1 = Integer.parseInt(search.get("hardDrive"));
-//            int num2 = Integer.parseInt(search.get("hardDrive2"));
-//            Set<Integer> temp = new HashSet<>();
-//            for (int i = 0; i < notes.size(); i++) {
-//                if (notes.get(i).getHardDrive() >= num1 && notes.get(i).getHardDrive() <= num2) {
-//                    temp.add(notes.get(i).getNoteId());
-//                }
-//            }
-
-
-//            Methods.check()
-            searchSet.retainAll(Methods.checkTwo(notes, search, "ram", "ram2"));
-            System.out.println("итоговое множество: "+searchSet);
-        }
-
-        if (search.containsKey("hardDrive")) {
-//            Set<Integer> temp = new HashSet<>();
-
-            searchSet.retainAll(Methods.checkTwo(notes, search, "hardDrive", "hardDrive2"));
-            System.out.println("итоговое множество: "+searchSet);
-        }
-
-        if (search.containsKey("OS")) {
-//            Set<Integer> temp = new HashSet<>();
-//            for (int i = 0; i < notes.size(); i++) {
-//                if (notes.get(i).getOS().equals(search.get("OS"))) {
-//                    temp.add(notes.get(i).getNoteId());
-//                }
-//            }
-
-            searchSet.retainAll(Methods.checkOne(notes, search, "OS"));
-            System.out.println("итоговое множество: "+searchSet);
-        }
-
-        if (search.containsKey("color")) {
-//            Set<Integer> temp = new HashSet<>();
-
-            searchSet.retainAll(Methods.checkOne(notes, search, "color"));
-            System.out.println("итоговое множество: "+searchSet);
-        }
-
-        if (search.containsKey("price")) {
-//            Set<Integer> temp = new HashSet<>();
-
-            searchSet.retainAll(Methods.checkTwo(notes, search, "price", "price2"));
-            System.out.println("итоговое множество: "+searchSet);
-        }
-
-        if (search.containsKey("defected")) {
-//            Set<Integer> temp = new HashSet<>();
-
-            searchSet.retainAll(Methods.checkOne(notes, search, "defected"));
-            System.out.println("итоговое множество: "+searchSet);
-        }
-
-//        for (int i = 0; i < search.size(); i++) {
-//            if (search.get(i).equals("")) {}
-//        }
-        //        if (search.containsKey("ram2")) {
-//            if (search.get("ram"))
-//        }
-        */
-//        System.out.println(search);
+        System.out.println("ID: " + tempSet);
         Methods.searchPrint(notes, tempSet);
     }
 }
