@@ -1,7 +1,6 @@
 package org.example.seminar6.hw2;
 
 public class Notebook {
-    //private Integer noteId; // уникальный ключ, без повторов
     private String noteName;
     private String noteModel;
     private Integer ram;

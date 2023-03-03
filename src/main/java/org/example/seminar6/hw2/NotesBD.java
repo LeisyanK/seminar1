@@ -1,8 +1,6 @@
 package org.example.seminar6.hw2;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class NotesBD {
@@ -18,7 +16,6 @@ public class NotesBD {
         Notebook note5 = new Notebook("Samsung", "AK-8", 12, 256, "Windows10", "черный", 16600.0, false);
         Notebook note6 = new Notebook("Apple", "AT-20", 16, 1000, "MacOS", "белый", 23000.0, false);
         Notebook note7 = new Notebook("Asus", "AS-3", 16, 1024, "Windows10", "черный", 17300.0, false);
-//        List<Notebook> notes = new ArrayList<>();
         Map<Integer, Notebook> notes = new HashMap<>();
         notes.put(1, note1);
         notes.put(2, note2);

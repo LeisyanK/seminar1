@@ -1,8 +1,6 @@
 package org.example.seminar6.hw2;
 
 import java.util.*;
-//org.example.seminar3.cw
-
 
 /**
  * Задание на дом :
@@ -21,14 +19,9 @@ public class Main {
     public static void main(String[] args) {
         // создаем экземпляры ноутбуков
         Map<Integer, Notebook> notes = NotesBD.addNotes();
-//        System.out.println(notes);
-        for (int i = 0; i < notes.size(); i++) {
-            System.out.println(notes.get(i).toString());
+        for (int i = 1; i < notes.size() + 1; i++) {
+            System.out.println(notes.get(i));
         }
-//        Set<Integer> searchSet = new HashSet<>(Arrays.asList(1,2));
-//        notes.get(1).searchNote(searchSet);
-
-
 
         System.out.println("""
                 Выберите характеристики ноутбука:
@@ -44,19 +37,21 @@ public class Main {
         while (flag) {
             System.out.println("Введите параметр:");
             Scanner scanner = new Scanner(System.in);
-            int num = scanner.nextInt(); scanner.nextLine();
-            if (num<1 || num>6) {
+            int num = scanner.nextInt();
+            scanner.nextLine();
+            if (num < 1 || num > 6) {
                 System.out.println("Нет такого варианта поиска. Введите еще раз");
             } else {
                 String val1, val2 = null;
-                if (num==1 || num==2 || num==5){
+                if (num == 1 || num == 2 || num == 5) {
                     System.out.println("Введите нижнее значение диапазона:");
                     val1 = scanner.nextLine();
                     System.out.println("Введите верхнее значение диапазона:");
-                    val2 = scanner.nextLine();}
-                else {
-                System.out.println("Введите значение поиска:");
-                val1 = scanner.nextLine();}
+                    val2 = scanner.nextLine();
+                } else {
+                    System.out.println("Введите значение поиска:");
+                    val1 = scanner.nextLine();
+                }
                 switch (num) {
                     case 1 -> { //notes.get(0).ключ3
                         search.put("ram", val1);
@@ -74,21 +69,14 @@ public class Main {
                     }
                     case 6 -> search.put("defected", val1);
                 }
-//                search.put(num, val);
-                System.out.println("Выберите еще параметр? (да/нет)");
+                System.out.println("Введёте еще параметр? (да/нет)");
                 String ans = scanner.nextLine();
                 if (ans.equals("нет")) flag = false;
             }
         }
 
-//        search.put("ram2","12");
-//        search.put("color","черный");
-//        search.put("ram","8");
-//        search.put("defected","false");
-//        search.put("price","10000");
-//        search.put("price2","16000");
         // поиск в базе
-        System.out.println("ввод клиента: "+search);
+        System.out.println("ввод клиента: " + search);
         Set<Integer> tempSet = new HashSet<>(Methods.check(notes, search));
         System.out.println(tempSet);
         Methods.searchPrint(notes, tempSet);
