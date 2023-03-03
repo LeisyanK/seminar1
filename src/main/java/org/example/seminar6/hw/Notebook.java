@@ -3,7 +3,7 @@ package org.example.seminar6.hw;
 import java.util.Set;
 
 public class Notebook {
-    private Integer noteId;
+    private Integer noteId; // уникальный ключ, без повторов
     private String noteName;
     private String noteModel;
     private Integer ram;
@@ -100,6 +100,19 @@ public class Notebook {
         this.defected = defected;
     }
 
+    @Override
+    public String toString() {
+        return "Notebook: {" +
+                "название:" + noteName +
+                ", модель:" + noteModel +
+                ", ОЗУ:" + ram +
+                ", жесткий диск:" + hardDrive +
+                ", ОС:" + OS +
+                ", цвет:" + color +
+                ", цена:" + price +
+                ", исправен:" + defected +
+                '}';
+    }
     public void searchNote(Set<Integer> search){
         if (search.contains(noteId)) {
             System.out.println(noteId+noteName+noteModel);
